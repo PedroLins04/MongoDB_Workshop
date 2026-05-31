@@ -3,6 +3,7 @@ package com.PedroLins.WorkshopMongo.Services;
 import com.PedroLins.WorkshopMongo.Domain.user;
 import com.PedroLins.WorkshopMongo.Repositories.UserRepository;
 import com.PedroLins.WorkshopMongo.Services.Exceptions.ObjectNotFound;
+import com.PedroLins.WorkshopMongo.dto.userDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +23,13 @@ public class UserServices {
     public user findById(String id) {
         Optional<user> obj = repository.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFound("Object not found"));
+    }
+
+    public user Insert(user obj) {
+        return repository.insert(obj);
+    }
+
+    public user fromDTO(userDTO dto) {
+        return new user(dto.getId(), dto.getName(), dto.getEmail());
     }
 }
