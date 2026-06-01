@@ -1,12 +1,15 @@
 package com.PedroLins.WorkshopMongo.Domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-@Document (collection = "user")
+@Document(collection = "user")
 public class user implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -15,6 +18,9 @@ public class user implements Serializable {
 
     private String name;
     private String email;
+
+    @DBRef(lazy = true)
+    private List<post> posts = new ArrayList<>();
 
     //CONSTRUCTOR
 
@@ -48,6 +54,10 @@ public class user implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<post> getPosts() {
+        return posts;
     }
 
     //HASHCODE AND EQUALS
