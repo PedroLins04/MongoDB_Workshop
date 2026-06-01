@@ -1,11 +1,14 @@
 package com.PedroLins.WorkshopMongo.Domain;
 
 import com.PedroLins.WorkshopMongo.dto.authorDTO;
+import com.PedroLins.WorkshopMongo.dto.commentDTO;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Document(collection = "post")
@@ -19,6 +22,8 @@ public class post implements Serializable {
     private Date date;
     private String title;
     private String body;
+
+    private List <commentDTO> comments = new ArrayList<>();
 
     //CONSTRUCTORS
 
@@ -34,7 +39,6 @@ public class post implements Serializable {
     }
 
     //GETTERS AND SETTERS
-
 
     public String getId() {
         return id;
@@ -74,6 +78,10 @@ public class post implements Serializable {
 
     public void setAuthor(authorDTO author) {
         this.author = author;
+    }
+
+    public List<commentDTO> getComments() {
+        return comments;
     }
 
     //HASHCODE AND EQUALS
