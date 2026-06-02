@@ -1,6 +1,6 @@
 # 🍃 MongoDB Workshop
 
-Projeto de workshop que implementa um sistema de **rede social** com usuários, posts e comentários, desenvolvido com **Spring Boot** e **MongoDB**. O objetivo é explorar a integração entre uma API REST em Java e um banco de dados NoSQL orientado a documentos, utilizando queries personalizadas e os padrões nativos do Spring com MongoDB.
+Projeto que implementa um sistema de **rede social** com usuários, posts e comentários, desenvolvido com **Spring Boot** e **MongoDB**. O objetivo é explorar a integração entre uma API REST em Java e um banco de dados NoSQL orientado a documentos, utilizando queries personalizadas e os padrões nativos do Spring com MongoDB.
 
 ---
 
